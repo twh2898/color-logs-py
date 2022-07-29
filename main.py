@@ -1,11 +1,14 @@
 #!/usr/bin/env python3
 
-import logs as l
+from logs import *
 
 if __name__ == '__main__':
-    l.section('Hello World')
-    l.step('Print numbers')
-    l.items(['one', 'two', 'three'])
-    l.section('Some info', warn=True)
-    l.info('I was walking in the rain')
-    l.info('Then I was wet')
+    section('Hello World')
+    task('Print numbers')
+    items(['one', 'two', 'three'])
+    task('Some info', warn=True)
+    step('I was walking in the rain')
+    info('Then I was wet')
+
+    for i in range(0, 100, 10):
+        progress(i, i)
